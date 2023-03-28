@@ -20,13 +20,13 @@ fun bankFeeCalculation(
     return when (paymentSystem) {
         "MasterCard" -> when {
             transactionAmount > 150_000 || transactionAmount + monthTotal > 600_000 -> -1
-            monthTotal <= 75000.0 -> 0
+            transactionAmount + monthTotal <= 75000.0 -> 0
             else -> (transactionAmount * 0.006).toInt() + 20
         }
 
         "Maestro" -> when {
             transactionAmount > 150_000 || transactionAmount + monthTotal > 600_000 -> -1
-            monthTotal <= 75000.0 -> 0
+            transactionAmount + monthTotal <= 75000.0 -> 0
             else -> (transactionAmount * 0.006).toInt() + 20
         }
 
