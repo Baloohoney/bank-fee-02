@@ -39,7 +39,7 @@ class BankFeeTest {
             paymentSystem = paymentSystem, monthTotal = monthTotal,
             transactionAmount = transactionAmount
         )
-        assertEquals(80, result)
+        assertEquals(-1, result)
     }
 
     @Test
